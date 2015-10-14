@@ -1,11 +1,11 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/only-dev-server',
-    './scripts/index'
+    './src/client/index'
   ],
   output: {
     path: __dirname,
@@ -22,7 +22,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ },
+      { test: /\.js$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
       { test: /\.css$/, loader: "style!css" }
     ]
   }
